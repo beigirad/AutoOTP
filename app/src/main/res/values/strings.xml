@@ -5,4 +5,5 @@
     <string name="status_label">Status:</string>
     <string name="status_ok">is listening</string>
     <string name="status_not_ok">is NOT listening</string>
+    <string name="otp_copied">Otp copied to clipboard</string>
 </resources>

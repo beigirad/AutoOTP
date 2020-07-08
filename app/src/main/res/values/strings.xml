@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">FishyMind</string>
+    <string name="permission_message">To use FishyMind, grant permission\nto access notifications content</string>
+    <string name="permission_grant">Grant</string>
+    <string name="status_label">Status:</string>
+    <string name="status_ok">is listening</string>
+    <string name="status_not_ok">is NOT listening</string>
 </resources>

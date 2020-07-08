@@ -1,4 +1,4 @@
-package ir.beigirad.fishymind
+package ir.beigirad.autootp
 
 import android.app.Application
 import timber.log.Timber

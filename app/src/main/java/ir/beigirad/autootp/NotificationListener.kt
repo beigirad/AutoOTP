@@ -1,4 +1,4 @@
-package ir.beigirad.fishymind
+package ir.beigirad.autootp
 
 import android.app.Notification
 import android.content.ClipData

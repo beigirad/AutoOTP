@@ -1,4 +1,4 @@
-package ir.beigirad.fishymind
+package ir.beigirad.autootp
 
 import android.content.Intent
 import android.os.Bundle

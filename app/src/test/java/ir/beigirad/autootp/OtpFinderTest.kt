@@ -1,4 +1,4 @@
-package ir.beigirad.fishymind
+package ir.beigirad.autootp
 
 import org.junit.Assert
 import org.junit.Test

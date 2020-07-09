@@ -1,5 +1,6 @@
 package ir.beigirad.autootp
 
+import ir.beigirad.autootp.bankstemplate.ParsianBank
 import ir.beigirad.autootp.bankstemplate.SamanBank
 
 /**
@@ -7,7 +8,8 @@ import ir.beigirad.autootp.bankstemplate.SamanBank
  */
 object OtpFinder {
     val banks = listOf(
-        SamanBank()
+        SamanBank(),
+        ParsianBank()
     )
 
     fun find(text: String): String? {

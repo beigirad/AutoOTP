@@ -1,12 +1,14 @@
 package ir.beigirad.autootp
 
 import ir.beigirad.autootp.OtpCaseFactory.allCases
+import ir.beigirad.autootp.OtpCaseFactory.ayande1
 import ir.beigirad.autootp.OtpCaseFactory.melli1
 import ir.beigirad.autootp.OtpCaseFactory.parsian1
 import ir.beigirad.autootp.OtpCaseFactory.parsian2
 import ir.beigirad.autootp.OtpCaseFactory.saman1
 import ir.beigirad.autootp.OtpCaseFactory.saman2
 import ir.beigirad.autootp.OtpCaseFactory.saman3
+import ir.beigirad.autootp.bankstemplate.AyandeBank
 import ir.beigirad.autootp.bankstemplate.MelliBank
 import ir.beigirad.autootp.bankstemplate.ParsianBank
 import ir.beigirad.autootp.bankstemplate.SamanBank
@@ -30,6 +32,11 @@ class OtpFinderTest {
     @Test
     fun melli_otp_detected() {
         Assert.assertEquals(melli1.expectedOtp, MelliBank().getCode(melli1.message))
+    }
+
+    @Test
+    fun ayande_otp_detected() {
+        Assert.assertEquals(ayande1.expectedOtp, AyandeBank().getCode(ayande1.message))
     }
 
     @Test

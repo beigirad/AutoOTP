@@ -34,13 +34,19 @@ object OtpCaseFactory {
         "5611728"
     )
 
+    val ayande1 = Case(
+        "بانک آینده\nرمز دوم یکبار مصرف:\n6376325\nاعتبارتا:15:29:00",
+        "6376325"
+    )
+
     val allCases = setOf(
         saman1,
         saman2,
         saman3,
         parsian1,
         parsian2,
-        melli1
+        melli1,
+        ayande1
     )
 }
 

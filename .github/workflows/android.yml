@@ -17,14 +17,20 @@ jobs:
       uses: actions/setup-java@v1
       with:
         java-version: 1.8
+        
     - name: Generating keystores.jks
-      run: base64 --decode ${{ secrets.KEYSTOREB64 }} > keystore.jks
-    - name: Generating keystores.properties
-      run: echo ${{ secrets.KEYS }} > keystore.properties
+      run: |
+        echo '${{ secrets.KEYSTOREB64 }}' | base64 --decode > keystore.jks 
+        
+    - name: Generating keystores.jks
+      run: |
+        echo '${{ secrets.KEYSB64 }}' | base64 --decode > keystore.properties 
+
     - name: Build with Gradle
       run: ./gradlew assembleRelease --stacktrace
+
     - name: Archive output apk
       uses: actions/upload-artifact@v2
       with:
-        name: output-apk
+        name: output-apk.zip
         path: app/build/outputs/apk/release/auto-otp-v*.apk

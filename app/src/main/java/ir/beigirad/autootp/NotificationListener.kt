@@ -36,7 +36,7 @@ class NotificationListener : NotificationListenerService() {
     private fun processSmsContent(sbn: StatusBarNotification) {
         sbn.notification.extras
             .getString(Notification.EXTRA_TEXT)?.let { messageContent ->
-                GlobalOtpFinder.find(messageContent)?.let { otp ->
+                OtpFinder.find(messageContent)?.let { otp ->
                     copyToClipboard(otp)
                     showToast()
                 }

@@ -6,7 +6,7 @@ import timber.log.Timber
 /**
  * Created by Farhad Beigirad on 7/8/20.
  */
-class FishyApp : Application() {
+class AutoOtpApp : Application() {
     override fun onCreate() {
         super.onCreate()
 

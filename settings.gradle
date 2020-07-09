@@ -1,2 +1,2 @@
 include ':app'
-rootProject.name = "FishyMind"
+rootProject.name = "AutoOTP"

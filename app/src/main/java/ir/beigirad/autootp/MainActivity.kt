@@ -1,7 +1,12 @@
 package ir.beigirad.autootp
 
+import android.content.ActivityNotFoundException
+import android.content.Context
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.NotificationManagerCompat
 import androidx.core.content.ContextCompat
@@ -48,6 +53,29 @@ class MainActivity : AppCompatActivity() {
             if (isListening) R.color.colorPrimary
             else R.color.colorRed
         tv_status.setTextColor(ContextCompat.getColor(this, colorId))
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.main_menu, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return if (item.itemId == R.id.ac_view_source) {
+            openUrl(this, "https://github.com/beigirad/AutoOTP")
+            true
+        } else
+            return super.onOptionsItemSelected(item)
+    }
+
+    private fun openUrl(context: Context, url: String) {
+        try {
+            val intent = Intent(Intent.ACTION_VIEW)
+            intent.setDataAndNormalize(Uri.parse(url))
+            context.startActivity(intent)
+        } catch (e: ActivityNotFoundException) {
+            Timber.w(e)
+        }
     }
 
     override fun onBackPressed() {

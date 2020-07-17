@@ -39,6 +39,15 @@ object OtpCaseFactory {
         "6376325"
     )
 
+    val mellat1 = Case(
+        "محرمانه\nرمز برداشت وجه از کارت شما: 5371134\nاعتبار: 120 ثانيه",
+        "5371134"
+    )
+    val mellat2 = Case(
+        "بانک ملت\nخريد با کارت\nبرداشت از حساب 5411111115\nمبلغ : 9,230,000ريال\nموجودي : 17,970,170 ريال\nمستند : 23736\n99/04/14 16:49",
+        null
+    )
+
     val allCases = setOf(
         saman1,
         saman2,
@@ -46,7 +55,9 @@ object OtpCaseFactory {
         parsian1,
         parsian2,
         melli1,
-        ayande1
+        ayande1,
+        mellat1,
+        mellat2
     )
 }
 

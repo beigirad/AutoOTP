@@ -26,13 +26,15 @@ class NotificationListener : NotificationListenerService() {
     }
 
     private fun isFromMessagingApp(sbn: StatusBarNotification): Boolean {
-        return sbn.packageName == Telephony.Sms.getDefaultSmsPackage(baseContext)
+        return sbn.packageName == Telephony.Sms.getDefaultSmsPackage(baseContext) ||
+                sbn.packageName == baseContext.packageName
     }
 
     private fun processSmsContent(sbn: StatusBarNotification) {
         sbn.notification.extras
             .getString(Notification.EXTRA_TEXT)?.let { messageContent ->
                 OtpFinder.find(messageContent)?.let { otp ->
+                    NotificationHelper(baseContext).raiseNotification(otp)
                     ClipboardHelper.copyToClipboard(baseContext, otp)
                 }
             }

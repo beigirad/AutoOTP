@@ -5,6 +5,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.NotificationManagerCompat
 import androidx.core.content.ContextCompat
+import androidx.core.view.isVisible
 import kotlinx.android.synthetic.main.activity_main.*
 import timber.log.Timber
 
@@ -19,6 +20,11 @@ class MainActivity : AppCompatActivity() {
 
         btn_open_setting.setOnClickListener {
             startActivity(Intent("android.settings.ACTION_NOTIFICATION_LISTENER_SETTINGS"))
+        }
+
+        btn_send_test.isVisible = BuildConfig.DEBUG
+        btn_send_test.setOnClickListener {
+            NotificationHelper(this).raiseTestNotification()
         }
     }
 

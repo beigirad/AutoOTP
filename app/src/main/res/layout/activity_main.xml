@@ -86,15 +86,11 @@
         app:layout_constraintTop_toBottomOf="@id/tv_permission_message" />
 
 
-    <Button
-        android:id="@+id/btn_send_test"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:text="@string/send_test"
-        android:textAllCaps="false"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent" />
+    <FrameLayout
+        android:id="@+id/preferences_container"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btn_open_setting" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

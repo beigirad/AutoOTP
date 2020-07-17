@@ -1,0 +1,25 @@
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory app:title="@string/preferences">
+
+        <SwitchPreferenceCompat
+            app:defaultValue="true"
+            app:icon="@drawable/ic_copy"
+            app:key="@string/pref_auto_copy"
+            app:summaryOff="@string/auto_copy_off"
+            app:summaryOn="@string/auto_copy_on"
+            app:title="@string/auto_copy" />
+
+        <SwitchPreferenceCompat
+            app:icon="@drawable/ic_notification"
+            app:key="@string/pref_raise_notification"
+            app:summaryOff="@string/raise_notification_off"
+            app:summaryOn="@string/raise_notification_on"
+            app:title="@string/raise_notification" />
+
+        <Preference
+            app:key="@string/pref_send_mock_message"
+            app:summary="@string/send_test_summery"
+            app:title="@string/send_test" />
+    </PreferenceCategory>
+</PreferenceScreen>

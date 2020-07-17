@@ -34,8 +34,12 @@ class NotificationListener : NotificationListenerService() {
         sbn.notification.extras
             .getString(Notification.EXTRA_TEXT)?.let { messageContent ->
                 OtpFinder.find(messageContent)?.let { otp ->
-                    NotificationHelper(baseContext).raiseNotification(otp)
-                    ClipboardHelper.copyToClipboard(baseContext, otp)
+                    if (PreferencesHelper.isEnableRaiseNotification(baseContext)) {
+                        NotificationHelper(baseContext).raiseNotification(otp)
+                    }
+                    if (PreferencesHelper.isEnableAutoCopy(baseContext)) {
+                        ClipboardHelper.copyToClipboard(baseContext, otp)
+                    }
                 }
             }
     }

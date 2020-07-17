@@ -5,7 +5,8 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.NotificationManagerCompat
 import androidx.core.content.ContextCompat
-import androidx.core.view.isVisible
+import androidx.preference.Preference
+import androidx.preference.PreferenceFragmentCompat
 import kotlinx.android.synthetic.main.activity_main.*
 import timber.log.Timber
 
@@ -22,10 +23,9 @@ class MainActivity : AppCompatActivity() {
             startActivity(Intent("android.settings.ACTION_NOTIFICATION_LISTENER_SETTINGS"))
         }
 
-        btn_send_test.isVisible = BuildConfig.DEBUG
-        btn_send_test.setOnClickListener {
-            NotificationHelper(this).raiseTestNotification()
-        }
+        supportFragmentManager.beginTransaction()
+            .replace(preferences_container.id, SettingsFragment())
+            .commit()
     }
 
     override fun onResume() {
@@ -47,5 +47,22 @@ class MainActivity : AppCompatActivity() {
             if (isListening) android.R.color.holo_green_light
             else android.R.color.holo_red_dark
         tv_status.setTextColor(ContextCompat.getColor(this, colorId))
+    }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        finish()
+    }
+
+    class SettingsFragment : PreferenceFragmentCompat() {
+        override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
+            preferenceManager.sharedPreferencesName = getString(R.string.pref_name)
+            setPreferencesFromResource(R.xml.settings_preferences, rootKey)
+            preferenceScreen.findPreference<Preference>(getString(R.string.pref_send_mock_message))
+                ?.setOnPreferenceClickListener {
+                    NotificationHelper(requireContext()).raiseTestNotification()
+                    true
+                }
+        }
     }
 }

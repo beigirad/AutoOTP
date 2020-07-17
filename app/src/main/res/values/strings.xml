@@ -7,4 +7,19 @@
     <string name="status_not_ok">is NOT listening</string>
     <string name="otp_copied">Otp copied to clipboard</string>
     <string name="send_test">Send Test Message</string>
+    <string name="send_test_summery">Send a mock message to test performance</string>
+    <string name="preferences">Preferences</string>
+    <string name="auto_copy">Auto copy</string>
+    <string name="auto_copy_on">Automatically copy otp when message received</string>
+    <string name="auto_copy_off">Don\'t copy otp when message received</string>
+    <string name="raise_notification">Raise notification</string>
+    <string name="raise_notification_on">Automatically raise a notification when otp received</string>
+    <string name="raise_notification_off">Don\'t raise a notification when otp received</string>
+    <string name="title_activity_settings">SettingsActivity</string>
+
+
+    <string name="pref_name">user_prefs</string>
+    <string name="pref_auto_copy">AUTO_COPY</string>
+    <string name="pref_raise_notification">AUTO_RAISE_NOTIFICATION</string>
+    <string name="pref_send_mock_message">TEST_MESSAGE</string>
 </resources>

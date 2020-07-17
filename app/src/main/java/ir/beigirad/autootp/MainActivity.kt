@@ -44,8 +44,8 @@ class MainActivity : AppCompatActivity() {
             else R.string.status_not_ok
         )
         val colorId =
-            if (isListening) android.R.color.holo_green_light
-            else android.R.color.holo_red_dark
+            if (isListening) R.color.colorPrimary
+            else R.color.colorRed
         tv_status.setTextColor(ContextCompat.getColor(this, colorId))
     }
 
